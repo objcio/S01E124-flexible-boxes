@@ -97,7 +97,7 @@ extension Array where Element == Line {
                     let start = CGPoint(x: wrapper.layoutMargins.left, y: wrapper.layoutMargins.top)
                     let subviews = contents.apply(containerWidth: width - margins, startAt: start)
                     wrapper.setSubviews(subviews)
-                    let contentMaxY = subviews.map { $0.frame.maxY }.max() ?? 0
+                    let contentMaxY = subviews.map { $0.frame.maxY }.max() ?? wrapper.layoutMargins.top
                     let size = CGSize(width: width, height: contentMaxY + wrapper.layoutMargins.bottom)
                     wrapper.frame = CGRect(origin: origin, size: size)
 
